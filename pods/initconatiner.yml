@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: init-pod
+spec:
+  initContainers:
+    - name: init-ctr
+      image: busybox:latest
+      command: ["sh","-c","echo 'initilization started..' sleep 10; echo 'initilizaion completed'"]
+  containers:
+    - name: main-ctr
+      image: busybox:latest
+      command: ["sh","-c","echo 'main-ctr started'"]
+
+
