@@ -14,9 +14,9 @@ spec:
         - name: shared-logs
           mountPath: /var/log/
 
-    - name: sidecar-ctr
+    - name: sidecar-container
       image: busybox:latest
-      command: ["sh","-c","tail -f/var/log/app/log"]
+      command: ["sh","-c","tail -f /var/log/app.log"]
       volumeMounts:
         - name: shared-logs
           mountPath: /var/log/
